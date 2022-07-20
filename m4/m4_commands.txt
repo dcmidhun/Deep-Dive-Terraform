@@ -35,7 +35,7 @@ consul acl bootstrap
 export CONSUL_HTTP_TOKEN=SECRETID_VALUE
 
 # Windows
-$env:CONSUL_HTTP_TOKEN="SECRETID_VALUE"
+$env:CONSUL_HTTP_TOKEN="65f352ec-5ed4-3628-4adf-2d2a0be5aad6"
 
 ## Now we're going to configure Consul using Terraform 
 # Set up paths, policies, and tokens
@@ -44,9 +44,12 @@ terraform plan -out consul.tfplan
 terraform apply consul.tfplan
 
 # Get token values for Mary and Sally and record them for later
-consul acl token read -id ACCESSOR_ID_MARY
-consul acl token read -id ACCESSOR_ID_SALLY
-
+#Mary
+consul acl token read -id 521e9664-017e-0290-733a-d4c4273c4718
+#Mary secret id - 11caf2aa-28cb-d717-26fb-0fd32b163d61
+#Sally
+consul acl token read -id 8131a33a-e4fa-b2e2-37b1-102cef858d44
+#Sally secret id - 4a02ae02-6370-c0e2-ebcf-c121e7b9ccaf
 # Go back to the main m4 folder
 cd ..
 
